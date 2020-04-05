@@ -9,17 +9,17 @@ Design(Invision) - https://invis.io/VNUYXTO8FEK (Password - D3vChall3ng3)
 You will receive an email from us inviting you as a collaborator on this project on Invision.
 
 ## TECHNICAL ASPECT:
-• Use any tech stack you would like, but we strongly suggest you use lean bootstrapping projects like create-react-app or something relevant.
-• Feel free to share your code as a URL of the repository or folder from any file storage service or as a ZIP file. (would be nice to have `.git` folder anyway)
-• If you’re unsure about something or need more specs, just improvise. You have freedom.
+* Use any tech stack you would like, but we strongly suggest you use lean bootstrapping projects like create-react-app or something relevant.
+* Feel free to share your code as a URL of the repository or folder from any file storage service or as a ZIP file. (would be nice to have `.git` folder anyway)
+* If you’re unsure about something or need more specs, just improvise. You have freedom.
 
 ## POINTS TO CLARIFY:
-• Comments should show nested relations in appearance(`parent_id` field of comments indicates which comment they related to as a child comment). Feel free to improve UX in that topic.
-• You’re totally free to choose your tools but we don’t want you to waste too much time.
-• You can use a state machine library (like redux) if you think it’s necessary but it’s optional.
-• Consume snapshot data as an async request and feel free to handle unexpected cases.
-• Add delete functionality on comments
+* Comments should show nested relations in appearance(`parent_id` field of comments indicates which comment they related to as a child comment). Feel free to improve UX in that topic.
+* You’re totally free to choose your tools but we don’t want you to waste too much time.
+* You can use a state machine library (like redux) if you think it’s necessary but it’s optional.
+* Consume snapshot data as an async request and feel free to handle unexpected cases.
+* Add delete functionality on comments
 
 ## BONUS:
-• Unit tests
-• Sort posts by last commented first
+* Unit tests
+* Sort posts by last commented first
