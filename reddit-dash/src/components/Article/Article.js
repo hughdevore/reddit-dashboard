@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import moment from 'moment';
-import { Comment, DeleteFilled, Layout, PageHeader, Skeleton } from 'antd';
+import { Comment, Layout, PageHeader, Skeleton, Tooltip } from 'antd';
 import Styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCommentAlt, faTrash} from '@fortawesome/free-solid-svg-icons'
@@ -64,65 +64,39 @@ const InfoTime = Styled.span`
   padding: 0 0 .5em 0;
 `;
 
-/**
- * @TODO: Add Doc Blocks to functions and code.
- * @TODO: Add Delete functionality to comments.
- */
+class Article extends Component {
 
+  /**
+   * @TODO: Add Doc Blocks to functions and code.
+   * @TODO: Add Delete functionality to comments.
+   */
+  deleteComment(comment) {
+    console.log(comment);
+    // commentRoot.splice(commentRoot.findIndex(commentRoot, function(item) {
+    //   console.log(item);
+    //   // return item.value === 'commenet.id';
+    // }), 1);
+  }
 
-function CommentInfoContent(comment) {
-  const { created_utc, ups } = comment;
-  return (
-    <div style={{paddingLeft: '1em', display: 'inline-block', color: 'rgb(36, 36, 36)'}}>
-      <InfoPoints>{1 === ups ? ups+' point' : ups+' points'}</InfoPoints>
-      <span style={{padding: '0 .5em'}}>-</span>
-      <InfoTime>{moment.unix(created_utc).fromNow()}</InfoTime>
-    </div>
-  )
-}
-
-function CommentAuthor(author) {
-  return (
-    <a style={{textDecoration: 'none'}} href={'https://www.reddit.com/user/' + author}>{author}</a>
-  );
-}
-
-function CompiledComment({ comment }) {
-  const { author, body, children, id } = comment;
-  
-  const nestedComments = (children || []).map(comment => {
+  renderCommentInfoContent(comment) {
+    const { created_utc, ups } = comment;
     return (
-      <Comment 
-        key={id}
-        author={CommentAuthor(author)}
-        datetime={CommentInfoContent(comment)}
-        content={<span style={{padding: '.5em 0 1em 0', display: 'inline-block'}}>{comment.body}</span>}
-        style={ChildCommentContent}
-        actions={[<span key={comment.id}><FontAwesomeIcon icon={faTrash} style={{padding: '0 .75em 0 0'}}/></span>]}
-      />
+      <div style={{paddingLeft: '1em', display: 'inline-block', color: 'rgb(36, 36, 36)'}}>
+        <InfoPoints>{1 === ups ? ups+' point' : ups+' points'}</InfoPoints>
+        <span style={{padding: '0 .5em'}}>-</span>
+        <InfoTime>{moment.unix(created_utc).fromNow()}</InfoTime>
+      </div>
+    )
+  }
+
+  renderCommentAuthor(author) {
+    return (
+      <a style={{textDecoration: 'none'}} href={'https://www.reddit.com/user/' + author}>{author}</a>
     );
-  })
+  }
 
-  console.log(nestedComments);
-
-  return (
-    <Fragment>
-      <Comment 
-        key={id}
-        author={CommentAuthor(author)}
-        datetime={CommentInfoContent(comment)}
-        content={<span style={{padding: '.5em 0 1em 0', display: 'inline-block'}}>{body}</span>}
-        style={CommentContent}
-        actions={[<span key={comment.id}><FontAwesomeIcon icon={faTrash} style={{padding: '0 .75em 0 0', listStyleType: 'none'}}/></span>]}
-      >
-      {nestedComments}
-      </Comment>
-    </Fragment>
-  );
-}
-
-function Article(props) {
-    const { comments, selftext, subreddit, title, ups } = props.article;
+  render() {
+    const { comments, selftext, subreddit, title, ups } = this.props.article;
     const commentsLength = comments ? comments.length : 0;
 
     let commentRoot = [];
@@ -149,7 +123,6 @@ function Article(props) {
       });
     }
 
-
     return (
       <Fragment>
         <Layout>
@@ -175,11 +148,43 @@ function Article(props) {
             <Layout style={{paddingTop: '2em', display: 'inline-block'}}>
               <Content>
                 {commentRoot && commentRoot.length ? commentRoot.map(comment => {
+                  const { author, body, children, id } = comment;
+                  const actions = [
+                    <span key={comment.id} onClick={this.deleteComment}>
+                      <Tooltip title="Delete Comment" />
+                      <span key={comment.id}><FontAwesomeIcon icon={faTrash} /></span>
+                    </span>
+                  ];
+                  
+                  const nestedComments = (children || []).map(comment => {
+                    return (
+                      <Comment 
+                        key={comment.id}
+                        author={this.renderCommentAuthor(author)}
+                        datetime={this.renderCommentInfoContent(comment)}
+                        content={<span style={{padding: '.5em 0 1em 0', display: 'inline-block'}}>{comment.body}</span>}
+                        style={ChildCommentContent}
+                        actions={actions}
+                      />
+                    );
+                  })
+              
                   return (
-                    <CompiledComment key={comment.id} comment={comment} />
+                    <Fragment key={id}>
+                      <Comment 
+                        key={id}
+                        author={this.renderCommentAuthor(author)}
+                        datetime={this.renderCommentInfoContent(comment)}
+                        content={<span style={{padding: '.5em 0 1em 0', display: 'inline-block'}}>{body}</span>}
+                        style={CommentContent}
+                        actions={actions}
+                      >
+                      {nestedComments}
+                      </Comment>
+                    </Fragment>
                   );
                 }) : 
-                  <Skeleton loading={props.isLoading} />
+                  <Skeleton loading={this.props.isLoading} />
                 }
               </Content>
             </Layout>
@@ -188,6 +193,7 @@ function Article(props) {
       </Fragment>
       
     );
+  }
 }
 
 

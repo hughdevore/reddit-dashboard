@@ -24,7 +24,6 @@ class App extends Component {
     this.fetchArticle()
     .then(article => {
       setTimeout( () => {
-        console.log(article);
         this.setState({ article, isLoading: false })
       }, 750 );
 
