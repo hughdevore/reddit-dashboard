@@ -1,5 +1,6 @@
 {
   "name": "reddit-dash",
+  "homepage": "http://www.hughdevore.com/reddit-dashboard/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
