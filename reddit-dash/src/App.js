@@ -37,7 +37,6 @@ class App extends Component {
 
   render() {
     const { article, isLoading } = this.state;
-
     return (
       <Fragment>
         <Layout
@@ -50,7 +49,7 @@ class App extends Component {
             style={{
               backgroundColor: 'rgb(249, 249, 249)',
               padding: '3em 6em',
-              borderRadius: '8px',
+              borderRadius: '15px',
               boxShadow: '0 0 10px gray',
               fontFamily: 'verdana'
             }}
@@ -63,7 +62,6 @@ class App extends Component {
       </Fragment>
     );
   }
-  
 }
 
 export default App;

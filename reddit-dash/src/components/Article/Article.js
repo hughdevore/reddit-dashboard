@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import moment from 'moment';
-import { Comment, Layout, PageHeader, Skeleton } from 'antd';
+import { Comment, DeleteFilled, Layout, PageHeader, Skeleton } from 'antd';
 import Styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCommentAlt } from '@fortawesome/free-solid-svg-icons'
+import { faCommentAlt, faTrash} from '@fortawesome/free-solid-svg-icons'
 
 const { Content, Footer, Header } = Layout;
 
@@ -27,14 +27,14 @@ const Title = Styled.h1`
 
 const ArticleContent = {
   backgroundColor: 'white',
-  borderRadius: '10px',
+  borderRadius: '15px',
   padding: '2em',
   color: 'rgb(98, 98, 98)'
 }
 
 const ArticleContentLayout = {
   backgroundColor: 'rgb(241.0, 241.0, 241.0)',
-  borderRadius: '10px',
+  borderRadius: '15px',
   padding: '2em 4em',
   whiteSpace: 'pre-line'
 }
@@ -45,31 +45,39 @@ const ArticleFooter = {
 
 const CommentContent = {
   padding: '1em',
+  listStyleType: 'none'
 }
 
 const ChildCommentContent = {
   padding: '1em',
-  borderLeft: '2px solid rgb(239, 239, 239)'
+  borderLeft: '2px solid rgb(239, 239, 239)',
+  listStyleType: 'none'
 }
 
-const AvatarPoints = Styled.span`
+const InfoPoints = Styled.span`
   display: inline-block;
   padding: 0 0 .5em 0;
 `;
 
-const AvatarTime = Styled.span`
+const InfoTime = Styled.span`
   display: inline-block;
   padding: 0 0 .5em 0;
 `;
 
-function CommentAvatarContent(comment) {
+/**
+ * @TODO: Add Doc Blocks to functions and code.
+ * @TODO: Add Delete functionality to comments.
+ */
+
+
+function CommentInfoContent(comment) {
   const { created_utc, ups } = comment;
   return (
-    <Fragment>
-      <AvatarPoints>{1 === ups ? ups+' point' : ups+' points'}</AvatarPoints>
+    <div style={{paddingLeft: '1em', display: 'inline-block', color: 'rgb(36, 36, 36)'}}>
+      <InfoPoints>{1 === ups ? ups+' point' : ups+' points'}</InfoPoints>
       <span style={{padding: '0 .5em'}}>-</span>
-      <AvatarTime>{moment.unix(created_utc).fromNow()}</AvatarTime>
-    </Fragment>
+      <InfoTime>{moment.unix(created_utc).fromNow()}</InfoTime>
+    </div>
   )
 }
 
@@ -87,9 +95,10 @@ function CompiledComment({ comment }) {
       <Comment 
         key={id}
         author={CommentAuthor(author)}
-        avatar={CommentAvatarContent(comment)}
-        content={<span style={{padding: '1em 0 2em 0', display: 'inline-block'}}>{comment.body}</span>}
+        datetime={CommentInfoContent(comment)}
+        content={<span style={{padding: '.5em 0 1em 0', display: 'inline-block'}}>{comment.body}</span>}
         style={ChildCommentContent}
+        actions={[<span key={comment.id}><FontAwesomeIcon icon={faTrash} style={{padding: '0 .75em 0 0'}}/></span>]}
       />
     );
   })
@@ -98,16 +107,17 @@ function CompiledComment({ comment }) {
 
   return (
     <Fragment>
-        <Comment 
-          key={id}
-          author={CommentAuthor(author)}
-          avatar={CommentAvatarContent(comment)}
-          content={<span style={{padding: '1em 0 2em 0', display: 'inline-block'}}>{body}</span>}
-          style={CommentContent}
-        >
-        {nestedComments}
-        </Comment>
-      </Fragment>
+      <Comment 
+        key={id}
+        author={CommentAuthor(author)}
+        datetime={CommentInfoContent(comment)}
+        content={<span style={{padding: '.5em 0 1em 0', display: 'inline-block'}}>{body}</span>}
+        style={CommentContent}
+        actions={[<span key={comment.id}><FontAwesomeIcon icon={faTrash} style={{padding: '0 .75em 0 0', listStyleType: 'none'}}/></span>]}
+      >
+      {nestedComments}
+      </Comment>
+    </Fragment>
   );
 }
 
