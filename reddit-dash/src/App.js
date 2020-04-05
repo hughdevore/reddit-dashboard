@@ -44,7 +44,6 @@ class App extends Component {
           style={{
             backgroundColor: 'rgb(222, 228, 234)',
             padding: '7em 10em',
-            height: '75vh',
           }}
         >
           <Layout
