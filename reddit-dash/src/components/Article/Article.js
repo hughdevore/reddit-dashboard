@@ -26,54 +26,49 @@ class Article extends Component {
     commentRoot: []
   }
 
+  updateDeletedComment(comment) {
+    comment.body = 'This comment has been deleted.';
+    comment.author = 'N/A';
+    comment.created_utc = false;
+    comment.ups = 0;
+    return comment;
+  }
+
   deleteComment(comment) {
-    const { parent_id } = comment;
+    const { id, parent_id } = comment;
     const { commentRoot } = this.state;
-    // Get the index of the comment and update the body content.
-    let parentIndex = commentRoot.findIndex(comment => comment.id === parent_id);
-    let nestedParentIndex;
-    let thirdNestedParentIndex;
-    let lastNestedParentIndex;
-    if (parentIndex) {
-      comment.body = 'This comment has been deleted.';
-      comment.author = 'N/A';
-      comment.created_utc = false;
-      comment.ups = 0;
-      commentRoot[parentIndex] = comment;
-    } 
-
-    // @TODO: Refactor to delete comments individually.
-    
-    if (typeof parentIndex !== "number") {
-      commentRoot[parentIndex].children.forEach(comment => {
-        nestedParentIndex = comment.children.findIndex(comment => comment.id === parent_id);
-        comment.body = 'This comment has been deleted.';
-        comment.author = 'N/A';
-        comment.created_utc = false;
-        comment.ups = 0;
-        comment.children[nestedParentIndex] = comment;
-      });
+    let rootIndex = commentRoot.findIndex(comment => comment.id === id);
+    // Handle deleting comments on the root level.
+    if (!parent_id) {
+      commentRoot[rootIndex] = this.updateDeletedComment(comment);
     }
-
-    if (typeof nestedParentIndex === "number") {
-      commentRoot[parentIndex].children[nestedParentIndex].forEach(comment => {
-        thirdNestedParentIndex = comment.children.findIndex(comment => comment.id === parent_id);
-        comment.body = 'This comment has been deleted.';
-        comment.author = 'N/A';
-        comment.created_utc = false;
-        comment.ups = 0;
-        comment.children[thirdNestedParentIndex] = comment;
-      });
-    } 
-      
-    if (typeof thirdNestedParentIndex !== "number") {
-      commentRoot[parentIndex].children[nestedParentIndex].children[thirdNestedParentIndex].children.forEach(comment => {
-        lastNestedParentIndex = comment.children.findIndex(comment => comment.id === parent_id);
-        comment.body = 'This comment has been deleted.';
-        comment.author = 'N/A';
-        comment.created_utc = false;
-        comment.ups = 0;
-        comment.children[lastNestedParentIndex] = comment;
+    // Get the index of the comment and update the body content.
+    let nestedIndex;
+    let secondNestedParentIndex;
+    let lastNestedParentIndex;
+    // Loop through all of the comments and delete the one matching the id that was clicked.
+    if (parent_id && rootIndex === -1 && commentRoot) {
+      commentRoot.forEach(comment => {
+        nestedIndex = comment.children ? comment.children.findIndex(comment => comment.id === id) : false;
+        if (typeof nestedIndex === "number" && nestedIndex !== -1) {
+          comment.children[nestedIndex] = this.updateDeletedComment(comment.children[nestedIndex]);
+        }
+        if (nestedIndex === -1 && comment.children) {
+          comment.children.forEach(comment => {
+            secondNestedParentIndex = comment.children ? comment.children.findIndex(comment => comment.id === id) : -1;
+            if (typeof secondNestedParentIndex === "number" && secondNestedParentIndex !== -1) {
+              comment.children[secondNestedParentIndex] = this.updateDeletedComment(comment.children[secondNestedParentIndex]);
+            }
+            if (secondNestedParentIndex === -1 &&  comment.children) {
+              comment.children.forEach(comment => {
+                lastNestedParentIndex = comment.children ? comment.children.findIndex(comment => comment.id === id) : -1;
+                if (typeof lastNestedParentIndex === "number" && lastNestedParentIndex !== -1) {
+                  comment.children[lastNestedParentIndex] = this.updateDeletedComment(comment.children[lastNestedParentIndex]);
+                }
+              });
+            }
+          });
+        }
       });
     }
     this.setState({commentRoot});
@@ -81,7 +76,6 @@ class Article extends Component {
 
   renderCommentInfoContent(comment) {
     const { created_utc, ups = 0 } = comment;
-
     return (
       <div style={{paddingLeft: '1em', display: 'inline-block', color: 'rgb(36, 36, 36)'}}>
         <InfoPoints>{1 === ups ? ups+' point' : ups+' points'}</InfoPoints>
@@ -109,7 +103,6 @@ class Article extends Component {
   componentDidMount() {
     const { comments } = this.props.article;
     const builtCommentRoot = [];
-
     if ( comments && comments.length ) {
       comments.forEach(comment => {        
         const { parent_id } = comment;
@@ -149,7 +142,6 @@ class Article extends Component {
                 let lastNestedParentIndex = builtCommentRoot[parentIndex].children[nestedParentIndex].children.findIndex(child => child.id === id);
                 if (builtCommentRoot[parentIndex].children[nestedParentIndex].children[lastNestedParentIndex] && lastNestedChildren) {
                   // Add the lastNestedChildren to the child.
-                  console.log(lastNestedChildren);
                   if(!builtCommentRoot[parentIndex].children[nestedParentIndex].children[lastNestedParentIndex].children) {
                     builtCommentRoot[parentIndex].children[nestedParentIndex].children[lastNestedParentIndex].children = lastNestedChildren;
                   } else if (builtCommentRoot[parentIndex].children[nestedParentIndex].children[lastNestedParentIndex].children) {
@@ -169,7 +161,6 @@ class Article extends Component {
     const { comments, selftext, subreddit, title, ups } = this.props.article;
     const commentsLength = comments ? comments.length : 0;
     const { commentRoot } = this.state;
-
     return (
       <Fragment>
         <Layout>
@@ -196,16 +187,13 @@ class Article extends Component {
               <Content>
                 {commentRoot && commentRoot.length ? commentRoot.map(comment => {
                   const { author, body, children, id } = comment;
-                  console.log(commentRoot);
                   const nestedComments = (children || []).map(comment => {
-                    const { author, body, children, id } = comment;
-                    
+                    const { author, body, children, id } = comment;   
                     const nestedChildrenComments = (children || []).map(comment => {
                       const { author, body, children, id } = comment;
-
                       const lastNestedChildrenComments = (children || []).map(comment => {
                         const { author, body, id } = comment;
-                        if (!id) return;
+                        if (!id) return false;
                         return (
                           <Comment 
                             key={id}
@@ -216,8 +204,7 @@ class Article extends Component {
                           />
                         );
                       });
-
-                      if (!id) return;
+                      if (!id) return false;
                       return (
                         <Comment 
                           key={id}
@@ -230,8 +217,7 @@ class Article extends Component {
                         </Comment>
                       );
                     });
-
-                    if (!id) return;
+                    if (!id) return false;
                     return (
                       <Fragment key={id}>
                         <Comment 
@@ -246,8 +232,7 @@ class Article extends Component {
                       </Fragment>
                     );
                   });
-              
-                  if (!id) return;
+                  if (!id) return false;
                   return (
                     <Fragment key={id}>
                       <Comment 
