@@ -1,90 +1,101 @@
 import React, { Component, Fragment } from 'react';
 import moment from 'moment';
-import { Comment, Layout, PageHeader, Skeleton, Tooltip } from 'antd';
-import Styled from 'styled-components';
+import { Comment, Layout, PageHeader, Skeleton } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCommentAlt, faTrash} from '@fortawesome/free-solid-svg-icons'
+import { faCommentAlt, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+
+import {
+  Breadcrumb,
+  Ups,
+  Delete,
+  Deleted,
+  Title,
+  ArticleContent,
+  ArticleContentLayout,
+  ArticleFooter,
+  CommentContent,
+  ChildCommentContent,
+  InfoPoints,
+  InfoTime
+} from './style';
 
 const { Content, Footer, Header } = Layout;
 
-const Breadcrumb = Styled.div`
-  color: rgb(109.0, 109.0, 109.0);
-  letter-spacing: 1px;
-`;
-
-const Ups = Styled.span`
-  display: inline-block;
-  margin-right: 2em;
-`;
-
-const Title = Styled.h1`
-  display: inline-block;
-  font-size: 2em;
-  font-weight: 500;
-  margin: 20px 0;
-  color: rgb(44.0, 44.0, 44.0);
-`;
-
-const ArticleContent = {
-  backgroundColor: 'white',
-  borderRadius: '15px',
-  padding: '2em',
-  color: 'rgb(98, 98, 98)'
-}
-
-const ArticleContentLayout = {
-  backgroundColor: 'rgb(241.0, 241.0, 241.0)',
-  borderRadius: '15px',
-  padding: '2em 4em',
-  whiteSpace: 'pre-line'
-}
-
-const ArticleFooter = {
-  paddingTop: '1em'
-}
-
-const CommentContent = {
-  padding: '1em',
-  listStyleType: 'none'
-}
-
-const ChildCommentContent = {
-  padding: '1em',
-  borderLeft: '2px solid rgb(239, 239, 239)',
-  listStyleType: 'none'
-}
-
-const InfoPoints = Styled.span`
-  display: inline-block;
-  padding: 0 0 .5em 0;
-`;
-
-const InfoTime = Styled.span`
-  display: inline-block;
-  padding: 0 0 .5em 0;
-`;
-
 class Article extends Component {
+  state = {
+    commentRoot: []
+  }
 
-  /**
-   * @TODO: Add Doc Blocks to functions and code.
-   * @TODO: Add Delete functionality to comments.
-   */
   deleteComment(comment) {
-    console.log(comment);
-    // commentRoot.splice(commentRoot.findIndex(commentRoot, function(item) {
-    //   console.log(item);
-    //   // return item.value === 'commenet.id';
-    // }), 1);
+    const { parent_id } = comment;
+    const { commentRoot } = this.state;
+    // Get the index of the comment and update the body content.
+    let parentIndex = commentRoot.findIndex(comment => comment.id === parent_id);
+    let nestedParentIndex;
+    let thirdNestedParentIndex;
+    let lastNestedParentIndex;
+    if (parentIndex) {
+      comment.body = 'This comment has been deleted.';
+      comment.author = 'N/A';
+      comment.created_utc = false;
+      comment.ups = 0;
+      commentRoot[parentIndex] = comment;
+    } 
+
+    // @TODO: Refactor to delete comments individually.
+    
+    if (typeof parentIndex !== "number") {
+      commentRoot[parentIndex].children.forEach(comment => {
+        nestedParentIndex = comment.children.findIndex(comment => comment.id === parent_id);
+        comment.body = 'This comment has been deleted.';
+        comment.author = 'N/A';
+        comment.created_utc = false;
+        comment.ups = 0;
+        comment.children[nestedParentIndex] = comment;
+      });
+    }
+
+    if (typeof nestedParentIndex === "number") {
+      commentRoot[parentIndex].children[nestedParentIndex].forEach(comment => {
+        thirdNestedParentIndex = comment.children.findIndex(comment => comment.id === parent_id);
+        comment.body = 'This comment has been deleted.';
+        comment.author = 'N/A';
+        comment.created_utc = false;
+        comment.ups = 0;
+        comment.children[thirdNestedParentIndex] = comment;
+      });
+    } 
+      
+    if (typeof thirdNestedParentIndex !== "number") {
+      commentRoot[parentIndex].children[nestedParentIndex].children[thirdNestedParentIndex].children.forEach(comment => {
+        lastNestedParentIndex = comment.children.findIndex(comment => comment.id === parent_id);
+        comment.body = 'This comment has been deleted.';
+        comment.author = 'N/A';
+        comment.created_utc = false;
+        comment.ups = 0;
+        comment.children[lastNestedParentIndex] = comment;
+      });
+    }
+    this.setState({commentRoot});
   }
 
   renderCommentInfoContent(comment) {
-    const { created_utc, ups } = comment;
+    const { created_utc, ups = 0 } = comment;
+
     return (
       <div style={{paddingLeft: '1em', display: 'inline-block', color: 'rgb(36, 36, 36)'}}>
         <InfoPoints>{1 === ups ? ups+' point' : ups+' points'}</InfoPoints>
         <span style={{padding: '0 .5em'}}>-</span>
-        <InfoTime>{moment.unix(created_utc).fromNow()}</InfoTime>
+        <InfoTime>{created_utc ? moment.unix(created_utc).fromNow() : 'Deleted'}</InfoTime>
+          {created_utc ? 
+            <Delete key={comment.id} onClick={() => this.deleteComment(comment)}>
+              <span key={comment.id}><FontAwesomeIcon icon={faTrashAlt} /></span>
+            </Delete>
+            :
+            <Deleted key={comment.id}>
+              <span key={comment.id}><FontAwesomeIcon icon={faTrashAlt} /></span>
+            </Deleted>
+          }
       </div>
     )
   }
@@ -95,33 +106,69 @@ class Article extends Component {
     );
   }
 
-  render() {
-    const { comments, selftext, subreddit, title, ups } = this.props.article;
-    const commentsLength = comments ? comments.length : 0;
-
-    let commentRoot = [];
-    let commentMap = {};
+  componentDidMount() {
+    const { comments } = this.props.article;
+    const builtCommentRoot = [];
 
     if ( comments && comments.length ) {
       comments.forEach(comment => {        
         const { parent_id } = comment;
+        // Get the children and dedupe.
+        let children = comments.filter(comment => comment.parent_id === parent_id);
+        let parentIndex = builtCommentRoot.findIndex(comment => comment.id === parent_id);
         // If the comment doesn't have the 'parent_id' field add it the top level of commentMap.
-        if (!parent_id) return commentRoot.push(comment);
-
-        // Add the comment as a child to it's parent using the 'parent_id' field.
-        let parentCommentIndex = commentMap[parent_id];
-        if(typeof parentCommentIndex !== "number" ) {
-          parentCommentIndex = comments.findIndex(comment => comment.id === parent_id);
-          commentMap[parent_id] = parentCommentIndex;
-        }
-        if ( commentRoot[parentCommentIndex] ) {
-          if ( !commentRoot[parentCommentIndex].children) {
-            return commentRoot[parentCommentIndex].children = [comment]
+        if (!parent_id) return builtCommentRoot.push(comment);
+        if (builtCommentRoot[parentIndex] && children) {
+          // Add the children to the root comments.
+          if(!builtCommentRoot[parentIndex].children) {
+            builtCommentRoot[parentIndex].children = children;
+          } else if (builtCommentRoot[parentIndex].children) {
+            builtCommentRoot[parentIndex].children.push(children);
           }
-          commentRoot[parentCommentIndex].children.push(comment)
+          // Loop through the children and get their children.
+          children.forEach(child  => {
+            const { id } = child;
+            // Get the children of this child and dedupe.
+            let nestedChildren = comments.filter(comment => comment.parent_id === id);
+            // Get the index of this child.
+            let nestedParentIndex = builtCommentRoot[parentIndex].children.findIndex(child => child.id === id);
+            if (builtCommentRoot[parentIndex].children[nestedParentIndex] && nestedChildren) {
+              // Add the nestedChildren to the child.
+              if(!builtCommentRoot[parentIndex].children[nestedParentIndex].children) {
+                builtCommentRoot[parentIndex].children[nestedParentIndex].children = nestedChildren;
+              } else if (builtCommentRoot[parentIndex].children[nestedParentIndex].children) {
+                builtCommentRoot[parentIndex].children[nestedParentIndex].children.push(nestedChildren);
+              }
+              // Loop through the children and get their children.
+              nestedChildren.forEach(comment  => {
+                const { id } = comment;
+                //console.log(comment);
+                // Get the children of this child and dedupe.
+                let lastNestedChildren = comments.filter(comment => comment.parent_id === id);
+                // Get the index of this child.
+                let lastNestedParentIndex = builtCommentRoot[parentIndex].children[nestedParentIndex].children.findIndex(child => child.id === id);
+                if (builtCommentRoot[parentIndex].children[nestedParentIndex].children[lastNestedParentIndex] && lastNestedChildren) {
+                  // Add the lastNestedChildren to the child.
+                  console.log(lastNestedChildren);
+                  if(!builtCommentRoot[parentIndex].children[nestedParentIndex].children[lastNestedParentIndex].children) {
+                    builtCommentRoot[parentIndex].children[nestedParentIndex].children[lastNestedParentIndex].children = lastNestedChildren;
+                  } else if (builtCommentRoot[parentIndex].children[nestedParentIndex].children[lastNestedParentIndex].children) {
+                    builtCommentRoot[parentIndex].children[nestedParentIndex].children[lastNestedParentIndex].children.push(lastNestedChildren);
+                  }
+                }
+              });
+            }
+          });
         }
       });
+      this.setState({commentRoot: builtCommentRoot});
     }
+  }
+
+  render() {
+    const { comments, selftext, subreddit, title, ups } = this.props.article;
+    const commentsLength = comments ? comments.length : 0;
+    const { commentRoot } = this.state;
 
     return (
       <Fragment>
@@ -141,7 +188,7 @@ class Article extends Component {
                 {selftext}
               </Content>
               <Footer style={ArticleFooter}>
-                <FontAwesomeIcon icon={faCommentAlt} style={{padding: '0 .75em 0 0'}}/>
+                <FontAwesomeIcon icon={faCommentAlt} style={{padding: '0 .75em 0 0', width: '2em'}}/>
                 {comments ? commentsLength : 0} Comments
               </Footer>
             </Layout>
@@ -149,37 +196,68 @@ class Article extends Component {
               <Content>
                 {commentRoot && commentRoot.length ? commentRoot.map(comment => {
                   const { author, body, children, id } = comment;
-                  const actions = [
-                    <span key={comment.id} onClick={this.deleteComment}>
-                      <Tooltip title="Delete Comment" />
-                      <span key={comment.id}><FontAwesomeIcon icon={faTrash} /></span>
-                    </span>
-                  ];
-                  
+                  console.log(commentRoot);
                   const nestedComments = (children || []).map(comment => {
+                    const { author, body, children, id } = comment;
+                    
+                    const nestedChildrenComments = (children || []).map(comment => {
+                      const { author, body, children, id } = comment;
+
+                      const lastNestedChildrenComments = (children || []).map(comment => {
+                        const { author, body, id } = comment;
+                        if (!id) return;
+                        return (
+                          <Comment 
+                            key={id}
+                            author={this.renderCommentAuthor(author !== '[deleted]' ? author : 'N/A')}
+                            datetime={this.renderCommentInfoContent(comment)}
+                            content={<span style={{padding: '.5em 0 1em 0', display: 'inline-block'}}>{body !== '[deleted]' ? body : 'This comment has been deleted.'}</span>}
+                            style={ChildCommentContent}
+                          />
+                        );
+                      });
+
+                      if (!id) return;
+                      return (
+                        <Comment 
+                          key={id}
+                          author={this.renderCommentAuthor(author !== '[deleted]' ? author : 'N/A')}
+                          datetime={this.renderCommentInfoContent(comment)}
+                          content={<span style={{padding: '.5em 0 1em 0', display: 'inline-block'}}>{body !== '[deleted]' ? body : 'This comment has been deleted.'}</span>}
+                          style={ChildCommentContent}
+                        >
+                          {lastNestedChildrenComments}
+                        </Comment>
+                      );
+                    });
+
+                    if (!id) return;
                     return (
-                      <Comment 
-                        key={comment.id}
-                        author={this.renderCommentAuthor(author)}
-                        datetime={this.renderCommentInfoContent(comment)}
-                        content={<span style={{padding: '.5em 0 1em 0', display: 'inline-block'}}>{comment.body}</span>}
-                        style={ChildCommentContent}
-                        actions={actions}
-                      />
+                      <Fragment key={id}>
+                        <Comment 
+                          key={id}
+                          author={this.renderCommentAuthor(author !== '[deleted]' ? author : 'N/A')}
+                          datetime={this.renderCommentInfoContent(comment)}
+                          content={<span style={{padding: '.5em 0 1em 0', display: 'inline-block'}}>{body !== '[deleted]' ? body : 'This comment has been deleted.'}</span>}
+                          style={ChildCommentContent}
+                        >
+                          {nestedChildrenComments}
+                        </Comment>
+                      </Fragment>
                     );
-                  })
+                  });
               
+                  if (!id) return;
                   return (
                     <Fragment key={id}>
                       <Comment 
                         key={id}
-                        author={this.renderCommentAuthor(author)}
+                        author={this.renderCommentAuthor(author !== '[deleted]' ? author : 'N/A')}
                         datetime={this.renderCommentInfoContent(comment)}
-                        content={<span style={{padding: '.5em 0 1em 0', display: 'inline-block'}}>{body}</span>}
+                        content={<span style={{padding: '.5em 0 1em 0', display: 'inline-block'}}>{body !== '[deleted]' ? body : 'This comment has been deleted.'}</span>}
                         style={CommentContent}
-                        actions={actions}
                       >
-                      {nestedComments}
+                        {nestedComments}
                       </Comment>
                     </Fragment>
                   );

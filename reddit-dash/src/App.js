@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { Layout, Skeleton } from 'antd';
+import 'antd/lib/skeleton/style/css';
 import Article from './components/Article/Article';
 
 class App extends Component {
