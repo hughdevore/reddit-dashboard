@@ -1,25 +1,21 @@
 import React, { Component, Fragment } from 'react';
-import moment from 'moment';
 import { Comment, Layout, PageHeader, Skeleton } from 'antd';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCommentAlt, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import ArticleBody from './ArticleBody';
+import CommentInfo from '../Comment/CommentInfo';
+import CommentAuthor from '../Comment/CommentAuthor';
+
 
 import {
   Breadcrumb,
   Ups,
-  Delete,
-  Deleted,
   Title,
   ArticleContent,
-  ArticleContentLayout,
-  ArticleFooter,
   CommentContent,
+  CommentText,
   ChildCommentContent,
-  InfoPoints,
-  InfoTime
 } from './style';
 
-const { Content, Footer, Header } = Layout;
+const { Content, Header } = Layout;
 
 class Article extends Component {
   state = {
@@ -72,32 +68,6 @@ class Article extends Component {
       });
     }
     this.setState({commentRoot});
-  }
-
-  renderCommentInfoContent(comment) {
-    const { created_utc, ups = 0 } = comment;
-    return (
-      <div style={{paddingLeft: '1em', display: 'inline-block', color: 'rgb(36, 36, 36)'}}>
-        <InfoPoints>{1 === ups ? ups+' point' : ups+' points'}</InfoPoints>
-        <span style={{padding: '0 .5em'}}>-</span>
-        <InfoTime>{created_utc ? moment.unix(created_utc).fromNow() : 'Deleted'}</InfoTime>
-          {created_utc ? 
-            <Delete key={comment.id} onClick={() => this.deleteComment(comment)}>
-              <span key={comment.id}><FontAwesomeIcon icon={faTrashAlt} /></span>
-            </Delete>
-            :
-            <Deleted key={comment.id}>
-              <span key={comment.id}><FontAwesomeIcon icon={faTrashAlt} /></span>
-            </Deleted>
-          }
-      </div>
-    )
-  }
-
-  renderCommentAuthor(author) {
-    return (
-      <a style={{textDecoration: 'none'}} href={'https://www.reddit.com/user/' + author}>{author}</a>
-    );
   }
 
   componentDidMount() {
@@ -158,8 +128,7 @@ class Article extends Component {
   }
 
   render() {
-    const { comments, selftext, subreddit, title, ups } = this.props.article;
-    const commentsLength = comments ? comments.length : 0;
+    const { subreddit, title, ups } = this.props.article;
     const { commentRoot } = this.state;
     return (
       <Fragment>
@@ -174,15 +143,7 @@ class Article extends Component {
             </PageHeader>
           </Header>
           <Content style={ArticleContent}>
-            <Layout style={ArticleContentLayout}>
-              <Content >
-                {selftext}
-              </Content>
-              <Footer style={ArticleFooter}>
-                <FontAwesomeIcon icon={faCommentAlt} style={{padding: '0 .75em 0 0', width: '2em'}}/>
-                {comments ? commentsLength : 0} Comments
-              </Footer>
-            </Layout>
+            <ArticleBody article={this.props.article} />
             <Layout style={{paddingTop: '2em', display: 'inline-block'}}>
               <Content>
                 {commentRoot && commentRoot.length ? commentRoot.map(comment => {
@@ -197,9 +158,9 @@ class Article extends Component {
                         return (
                           <Comment 
                             key={id}
-                            author={this.renderCommentAuthor(author !== '[deleted]' ? author : 'N/A')}
-                            datetime={this.renderCommentInfoContent(comment)}
-                            content={<span style={{padding: '.5em 0 1em 0', display: 'inline-block'}}>{body !== '[deleted]' ? body : 'This comment has been deleted.'}</span>}
+                            author={<CommentAuthor author={author} />}
+                            datetime={<CommentInfo comment={comment} />}
+                            content={<CommentText>{body !== '[deleted]' ? body : 'This comment has been deleted.'}</CommentText>}
                             style={ChildCommentContent}
                           />
                         );
@@ -208,9 +169,9 @@ class Article extends Component {
                       return (
                         <Comment 
                           key={id}
-                          author={this.renderCommentAuthor(author !== '[deleted]' ? author : 'N/A')}
-                          datetime={this.renderCommentInfoContent(comment)}
-                          content={<span style={{padding: '.5em 0 1em 0', display: 'inline-block'}}>{body !== '[deleted]' ? body : 'This comment has been deleted.'}</span>}
+                          author={<CommentAuthor author={author} />}
+                          datetime={<CommentInfo comment={comment} />}
+                          content={<CommentText>{body !== '[deleted]' ? body : 'This comment has been deleted.'}</CommentText>}
                           style={ChildCommentContent}
                         >
                           {lastNestedChildrenComments}
@@ -222,9 +183,9 @@ class Article extends Component {
                       <Fragment key={id}>
                         <Comment 
                           key={id}
-                          author={this.renderCommentAuthor(author !== '[deleted]' ? author : 'N/A')}
-                          datetime={this.renderCommentInfoContent(comment)}
-                          content={<span style={{padding: '.5em 0 1em 0', display: 'inline-block'}}>{body !== '[deleted]' ? body : 'This comment has been deleted.'}</span>}
+                          author={<CommentAuthor author={author} />}
+                          datetime={<CommentInfo comment={comment} />}
+                          content={<CommentText>{body !== '[deleted]' ? body : 'This comment has been deleted.'}</CommentText>}
                           style={ChildCommentContent}
                         >
                           {nestedChildrenComments}
@@ -237,9 +198,9 @@ class Article extends Component {
                     <Fragment key={id}>
                       <Comment 
                         key={id}
-                        author={this.renderCommentAuthor(author !== '[deleted]' ? author : 'N/A')}
-                        datetime={this.renderCommentInfoContent(comment)}
-                        content={<span style={{padding: '.5em 0 1em 0', display: 'inline-block'}}>{body !== '[deleted]' ? body : 'This comment has been deleted.'}</span>}
+                        author={<CommentAuthor author={author} />}
+                        datetime={<CommentInfo comment={comment} />}
+                        content={<CommentText>{body !== '[deleted]' ? body : 'This comment has been deleted.'}</CommentText>}
                         style={CommentContent}
                       >
                         {nestedComments}
