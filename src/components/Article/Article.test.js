@@ -2,7 +2,7 @@ import React from "react";
 import { render, unmountComponentAtNode } from "react-dom";
 import { act } from "react-dom/test-utils";
 import renderer from 'react-test-renderer';
-import Article from "./article";
+import Article from "./Article";
 import { mockArticle } from "../../utils/mockArticle";
 
 let container = null;

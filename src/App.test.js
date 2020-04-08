@@ -1,7 +1,7 @@
 import React from "react";
 import { unmountComponentAtNode } from "react-dom";
 import renderer from 'react-test-renderer';
-import App from "./app";
+import App from "./App";
 
 let container = null;
 beforeEach(() => {
