@@ -12,6 +12,15 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - name: Install & test
-        run: yarn --no-progress --non-interactive --no-lockfile
-        run: yarn test
+      - run: yarn
+      - run: yarn test
+    test:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v1
+        - uses: actions/setup-node@v1
+          with:
+            node-version: 12
+        - name: Install & test
+        - run: yarn --no-progress --non-interactive --no-lockfile
+        - run: yarn test
