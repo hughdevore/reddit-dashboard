@@ -12,6 +12,5 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - name: Install & test
-      - run: yarn --no-progress --non-interactive --no-lockfile
+      - run: yarn
       - run: yarn test
