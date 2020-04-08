@@ -55,7 +55,7 @@ class Article extends Component {
             if (typeof secondNestedParentIndex === "number" && secondNestedParentIndex !== -1) {
               comment.children[secondNestedParentIndex] = this.updateDeletedComment(comment.children[secondNestedParentIndex]);
             }
-            if (secondNestedParentIndex === -1 &&  comment.children) {
+            if (secondNestedParentIndex === -1 && comment.children) {
               comment.children.forEach(comment => {
                 lastNestedParentIndex = comment.children ? comment.children.findIndex(comment => comment.id === id) : -1;
                 if (typeof lastNestedParentIndex === "number" && lastNestedParentIndex !== -1) {
@@ -67,15 +67,15 @@ class Article extends Component {
         }
       });
     }
-    this.setState({commentRoot});
+    this.setState({ commentRoot });
   }
 
   componentDidMount() {
     if (this.props.article) {
       const { comments } = this.props.article;
       const builtCommentRoot = [];
-      if ( comments && comments.length ) {
-        comments.forEach(comment => {        
+      if (comments && comments.length) {
+        comments.forEach(comment => {
           const { parent_id } = comment;
           // Get the children and dedupe.
           let children = comments.filter(comment => comment.parent_id === parent_id);
@@ -86,13 +86,13 @@ class Article extends Component {
           if (!parent_id) return builtCommentRoot.push(comment);
           if (builtCommentRoot[parentIndex] && children) {
             // Add the children to the root comments.
-            if(!builtCommentRoot[parentIndex].children) {
+            if (!builtCommentRoot[parentIndex].children) {
               builtCommentRoot[parentIndex].children = children;
             } else if (builtCommentRoot[parentIndex].children) {
               builtCommentRoot[parentIndex].children.push(children);
             }
             // Loop through the children and get their children.
-            children.forEach(child  => {
+            children.forEach(child => {
               const { id } = child;
               // Get the children of this child and dedupe.
               let nestedChildren = comments.filter(comment => comment.parent_id === id);
@@ -102,13 +102,13 @@ class Article extends Component {
               let nestedParentIndex = builtCommentRoot[parentIndex].children.findIndex(child => child.id === id);
               if (builtCommentRoot[parentIndex].children[nestedParentIndex] && nestedChildren) {
                 // Add the nestedChildren to the child.
-                if(!builtCommentRoot[parentIndex].children[nestedParentIndex].children) {
+                if (!builtCommentRoot[parentIndex].children[nestedParentIndex].children) {
                   builtCommentRoot[parentIndex].children[nestedParentIndex].children = nestedChildren;
                 } else if (builtCommentRoot[parentIndex].children[nestedParentIndex].children) {
                   builtCommentRoot[parentIndex].children[nestedParentIndex].children.push(nestedChildren);
                 }
                 // Loop through the children and get their children.
-                nestedChildren.forEach(comment  => {
+                nestedChildren.forEach(comment => {
                   const { id } = comment;
                   //console.log(comment);
                   // Get the children of this child and dedupe.
@@ -119,7 +119,7 @@ class Article extends Component {
                   let lastNestedParentIndex = builtCommentRoot[parentIndex].children[nestedParentIndex].children.findIndex(child => child.id === id);
                   if (builtCommentRoot[parentIndex].children[nestedParentIndex].children[lastNestedParentIndex] && lastNestedChildren) {
                     // Add the lastNestedChildren to the child.
-                    if(!builtCommentRoot[parentIndex].children[nestedParentIndex].children[lastNestedParentIndex].children) {
+                    if (!builtCommentRoot[parentIndex].children[nestedParentIndex].children[lastNestedParentIndex].children) {
                       builtCommentRoot[parentIndex].children[nestedParentIndex].children[lastNestedParentIndex].children = lastNestedChildren;
                     } else if (builtCommentRoot[parentIndex].children[nestedParentIndex].children[lastNestedParentIndex].children) {
                       builtCommentRoot[parentIndex].children[nestedParentIndex].children[lastNestedParentIndex].children.push(lastNestedChildren);
@@ -130,7 +130,7 @@ class Article extends Component {
             });
           }
         });
-        this.setState({commentRoot: builtCommentRoot});
+        this.setState({ commentRoot: builtCommentRoot });
       }
     }
   }
@@ -143,11 +143,11 @@ class Article extends Component {
           <Layout>
             <Header>
               <PageHeader>
-                <Result 
+                <Result
                   status="404"
                   title="Post not Found!"
                   subTitle="Sorry, the reddit post you visited does not exist."
-                  extra={<Button href="https://www.reddit.com/" type="primary" style={{margin: '2em'}}>Back Home</Button>}
+                  extra={<Button href="https://www.reddit.com/" type="primary" style={{ margin: '2em' }}>Back Home</Button>}
                   style={{
                     textAlign: 'center'
                   }}
@@ -167,28 +167,28 @@ class Article extends Component {
         <Layout>
           <Header>
             <PageHeader>
-              <Breadcrumb><a href="https://www.reddit.com/r/unpopularopinion/" style={{color: 'rgb(109.0, 109.0, 109.0)'}}>r/{subreddit}</a></Breadcrumb>
+              <Breadcrumb><a href="https://www.reddit.com/r/unpopularopinion/" style={{ color: 'rgb(109.0, 109.0, 109.0)' }}>r/{subreddit}</a></Breadcrumb>
               <Fragment>
-                <Ups>{ups/1000}k</Ups>
+                <Ups>{ups / 1000}k</Ups>
                 <Title>{title}</Title>
               </Fragment>
             </PageHeader>
           </Header>
           <Content style={ArticleContent}>
             <ArticleBody article={this.props.article} />
-            <Layout style={{paddingTop: '2em', display: 'inline-block'}}>
+            <Layout style={{ paddingTop: '2em', display: 'inline-block' }}>
               <Content>
                 {commentRoot && commentRoot.length ? commentRoot.map(comment => {
                   const { author, body, children, id } = comment;
                   const nestedComments = (children || []).map(comment => {
-                    const { author, body, children, id } = comment;   
+                    const { author, body, children, id } = comment;
                     const nestedChildrenComments = (children || []).map(comment => {
                       const { author, body, children, id } = comment;
                       const lastNestedChildrenComments = (children || []).map(comment => {
                         const { author, body, id } = comment;
                         if (!id) return false;
                         return (
-                          <Comment 
+                          <Comment
                             key={id}
                             author={<CommentAuthor author={author} />}
                             datetime={<CommentInfo comment={comment} deleteComment={this.deleteComment} />}
@@ -199,7 +199,7 @@ class Article extends Component {
                       });
                       if (!id) return false;
                       return (
-                        <Comment 
+                        <Comment
                           key={id}
                           author={<CommentAuthor author={author} />}
                           datetime={<CommentInfo comment={comment} deleteComment={this.deleteComment} />}
@@ -213,7 +213,7 @@ class Article extends Component {
                     if (!id) return false;
                     return (
                       <Fragment key={id}>
-                        <Comment 
+                        <Comment
                           key={id}
                           author={<CommentAuthor author={author} />}
                           datetime={<CommentInfo comment={comment} deleteComment={this.deleteComment} />}
@@ -228,7 +228,7 @@ class Article extends Component {
                   if (!id) return false;
                   return (
                     <Fragment key={id}>
-                      <Comment 
+                      <Comment
                         key={id}
                         author={<CommentAuthor author={author} />}
                         datetime={<CommentInfo comment={comment} deleteComment={this.deleteComment} />}
@@ -239,7 +239,7 @@ class Article extends Component {
                       </Comment>
                     </Fragment>
                   );
-                }) : 
+                }) :
                   <Skeleton loading={this.props.isLoading} />
                 }
               </Content>
