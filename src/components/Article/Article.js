@@ -30,7 +30,7 @@ class Article extends Component {
     return comment;
   }
 
-  deleteComment(comment) {
+  deleteComment = (comment) => {
     const { id, parent_id } = comment;
     const { commentRoot } = this.state;
     let rootIndex = commentRoot.findIndex(comment => comment.id === id);
@@ -191,7 +191,7 @@ class Article extends Component {
                           <Comment 
                             key={id}
                             author={<CommentAuthor author={author} />}
-                            datetime={<CommentInfo comment={comment} />}
+                            datetime={<CommentInfo comment={comment} deleteComment={this.deleteComment} />}
                             content={<CommentText>{body !== '[deleted]' ? body : 'This comment has been deleted.'}</CommentText>}
                             style={ChildCommentContent}
                           />
@@ -202,7 +202,7 @@ class Article extends Component {
                         <Comment 
                           key={id}
                           author={<CommentAuthor author={author} />}
-                          datetime={<CommentInfo comment={comment} />}
+                          datetime={<CommentInfo comment={comment} deleteComment={this.deleteComment} />}
                           content={<CommentText>{body !== '[deleted]' ? body : 'This comment has been deleted.'}</CommentText>}
                           style={ChildCommentContent}
                         >
@@ -216,7 +216,7 @@ class Article extends Component {
                         <Comment 
                           key={id}
                           author={<CommentAuthor author={author} />}
-                          datetime={<CommentInfo comment={comment} />}
+                          datetime={<CommentInfo comment={comment} deleteComment={this.deleteComment} />}
                           content={<CommentText>{body !== '[deleted]' ? body : 'This comment has been deleted.'}</CommentText>}
                           style={ChildCommentContent}
                         >
@@ -231,7 +231,7 @@ class Article extends Component {
                       <Comment 
                         key={id}
                         author={<CommentAuthor author={author} />}
-                        datetime={<CommentInfo comment={comment} />}
+                        datetime={<CommentInfo comment={comment} deleteComment={this.deleteComment} />}
                         content={<CommentText>{body !== '[deleted]' ? body : 'This comment has been deleted.'}</CommentText>}
                         style={CommentContent}
                       >

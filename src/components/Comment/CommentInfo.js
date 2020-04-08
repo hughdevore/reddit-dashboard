@@ -36,7 +36,7 @@ function CommentInfo(props) {
       <span style={{ padding: '0 .5em' }}>-</span>
       <InfoTime>{date ? moment().diff(date, 'days') + ' days and ' + (moment().diff(date, 'hours') % 24) + ' hours ago' : 'Deleted'}</InfoTime>
       {created_utc ?
-        <Delete key={id} onClick={() => this.deleteComment(props.comment)}>
+        <Delete key={id} onClick={() => props.deleteComment(props.comment)}>
           <span key={id}><FontAwesomeIcon icon={faTrashAlt} /></span>
         </Delete>
         :
