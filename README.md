@@ -1,4 +1,4 @@
-![](https://github.com/hughdevore/reddit-dashboard/workflows/main/badge.svg)
+![Tests!](https://github.com/hughdevore/reddit-dashboard/workflows/CI/badge.svg)
 
 # Challenge: Create a Reddit Post Dashboard
 We have our simplified snapshot data of a post from reddit API mentioned in the below URL. We would like to have a simple web page which display the post regarding to the design provided below.
