@@ -1,10 +1,12 @@
-# Create a Reddit Post Dashboard
+![](https://github.com/hughdevore/reddit-dashboard/workflows/main/badge.svg)
+
+# Challenge: Create a Reddit Post Dashboard
 We have our simplified snapshot data of a post from reddit API mentioned in the below URL. We would like to have a simple web page which display the post regarding to the design provided below.
 As a user, I expect to be able to read the post and read and delete comments.
 
 Snapshot URL:
-https://gist.githubusercontent.com/mkg0/6a4dca9067ad7a296204e7c9ecd977b0/raw/0b1ec16580ea1e970a73f5c85563c22631be7ad7/unpopularopinion-dataset.json
-Design(Invision) - https://invis.io/VNUYXTO8FEK (Password - D3vChall3ng3)
+* https://gist.githubusercontent.com/mkg0/6a4dca9067ad7a296204e7c9ecd977b0/raw/0b1ec16580ea1e970a73f5c85563c22631be7ad7/unpopularopinion-dataset.json
+* Design(Invision) - https://invis.io/VNUYXTO8FEK
 
 You will receive an email from us inviting you as a collaborator on this project on Invision.
 
@@ -20,6 +22,6 @@ You will receive an email from us inviting you as a collaborator on this project
 * Consume snapshot data as an async request and feel free to handle unexpected cases.
 * Add delete functionality on comments
 
-## BONUS:
-* Unit tests
+## ADDED BONUS FEATURES:
+* Unit tests 
 * Sort posts by last commented first

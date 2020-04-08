@@ -1,0 +1,1885 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The reddit article component. renders the reddit article component correctly. 1`] = `
+<section
+  className="ant-layout"
+>
+  <header
+    className="ant-layout-header"
+  >
+    <div
+      className="ant-page-header ant-page-header-ghost"
+    >
+      <div
+        className="ant-page-header-content"
+      >
+        <div
+          className="sc-AxhUy fFMUvv"
+        >
+          r/
+          unpopularopinion
+        </div>
+        <span
+          className="sc-AxgMl hfzIqd"
+        >
+          20.7
+          k
+        </span>
+        <h1
+          className="sc-AxheI bdElCy"
+        >
+          Taking showers with your socks on is so much better than not
+        </h1>
+      </div>
+    </div>
+  </header>
+  <main
+    className="ant-layout-content"
+    style={
+      Object {
+        "backgroundColor": "white",
+        "borderRadius": "15px",
+        "color": "rgb(98, 98, 98)",
+        "padding": "2em",
+      }
+    }
+  >
+    <section
+      className="ant-layout"
+      style={
+        Object {
+          "backgroundColor": "rgb(241.0, 241.0, 241.0)",
+          "borderRadius": "15px",
+          "padding": "2em 4em",
+          "whiteSpace": "pre-line",
+        }
+      }
+    >
+      <main
+        className="ant-layout-content"
+      >
+        I almost always shower with my socks on. It just feels more relaxing, I don’t really like the feeling of water below my feet. Having socks on, even light ones, feels like a nice towel to put around my feet when I’m showering. It’s just better this way. I’ve done this since I was like, 8, and I don’t ever plan on changing it. When I told my friends about it they all said it was really weird. I just think it is more comfortable, relaxing, and overall a better experience.
+
+Edit: jeez I really didn’t think that this was a big deal.
+
+Edit 2: To address some things:Yes, I actually do this, I personally like it, and it really isn’t problematic so I do it. My feet aren’t always super clean but I rub lotion on them occasionally.
+
+Edit 3: well I went to sleep, and now I have 953 notifications.
+      </main>
+      <footer
+        className="ant-layout-footer"
+        style={
+          Object {
+            "paddingTop": "1em",
+          }
+        }
+      >
+        <svg
+          aria-hidden="true"
+          className="svg-inline--fa fa-comment-alt fa-w-16 "
+          data-icon="comment-alt"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          style={
+            Object {
+              "padding": "0 .75em 0 0",
+              "width": "2em",
+            }
+          }
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M448 0H64C28.7 0 0 28.7 0 64v288c0 35.3 28.7 64 64 64h96v84c0 9.8 11.2 15.5 19.1 9.7L304 416h144c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+        16
+         Comments
+      </footer>
+    </section>
+    <section
+      className="ant-layout"
+      style={
+        Object {
+          "display": "inline-block",
+          "paddingTop": "2em",
+        }
+      }
+    >
+      <main
+        className="ant-layout-content"
+      >
+        <div
+          className="ant-comment"
+          style={
+            Object {
+              "listStyleType": "none",
+              "padding": "1em",
+            }
+          }
+        >
+          <div
+            className="ant-comment-inner"
+          >
+            <div
+              className="ant-comment-avatar"
+            />
+            <div
+              className="ant-comment-content"
+            >
+              <div
+                className="ant-comment-content-author"
+              >
+                <span
+                  className="ant-comment-content-author-name"
+                >
+                  <a
+                    href="RandomName01"
+                    style={
+                      Object {
+                        "textDecoration": "none",
+                      }
+                    }
+                  >
+                    RandomName01
+                  </a>
+                </span>
+                <span
+                  className="ant-comment-content-author-time"
+                >
+                  <div
+                    style={
+                      Object {
+                        "color": "rgb(36, 36, 36)",
+                        "display": "inline-block",
+                        "paddingLeft": "1em",
+                      }
+                    }
+                  >
+                    <span
+                      className="sc-AxiKw exhlKl"
+                    >
+                      1 point
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "padding": "0 .5em",
+                        }
+                      }
+                    >
+                      -
+                    </span>
+                    <span
+                      className="sc-AxhCb cxVvJR"
+                    >
+                      180 days and 16 hours ago
+                    </span>
+                    <span
+                      className="sc-AxjAm TWnUa"
+                      onClick={[Function]}
+                    >
+                      <span>
+                        <svg
+                          aria-hidden="true"
+                          className="svg-inline--fa fa-trash-alt fa-w-14 "
+                          data-icon="trash-alt"
+                          data-prefix="fas"
+                          focusable="false"
+                          role="img"
+                          style={Object {}}
+                          viewBox="0 0 448 512"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
+                            fill="currentColor"
+                            style={Object {}}
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                  </div>
+                </span>
+              </div>
+              <div
+                className="ant-comment-content-detail"
+              >
+                <span
+                  className="sc-Axmtr kfCvpG"
+                >
+                  Bruh
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            className="ant-comment-nested"
+          />
+        </div>
+        <div
+          className="ant-comment"
+          style={
+            Object {
+              "listStyleType": "none",
+              "padding": "1em",
+            }
+          }
+        >
+          <div
+            className="ant-comment-inner"
+          >
+            <div
+              className="ant-comment-avatar"
+            />
+            <div
+              className="ant-comment-content"
+            >
+              <div
+                className="ant-comment-content-author"
+              >
+                <span
+                  className="ant-comment-content-author-name"
+                >
+                  <a
+                    href="shantanu011"
+                    style={
+                      Object {
+                        "textDecoration": "none",
+                      }
+                    }
+                  >
+                    shantanu011
+                  </a>
+                </span>
+                <span
+                  className="ant-comment-content-author-time"
+                >
+                  <div
+                    style={
+                      Object {
+                        "color": "rgb(36, 36, 36)",
+                        "display": "inline-block",
+                        "paddingLeft": "1em",
+                      }
+                    }
+                  >
+                    <span
+                      className="sc-AxiKw exhlKl"
+                    >
+                      2233 points
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "padding": "0 .5em",
+                        }
+                      }
+                    >
+                      -
+                    </span>
+                    <span
+                      className="sc-AxhCb cxVvJR"
+                    >
+                      180 days and 19 hours ago
+                    </span>
+                    <span
+                      className="sc-AxjAm TWnUa"
+                      onClick={[Function]}
+                    >
+                      <span>
+                        <svg
+                          aria-hidden="true"
+                          className="svg-inline--fa fa-trash-alt fa-w-14 "
+                          data-icon="trash-alt"
+                          data-prefix="fas"
+                          focusable="false"
+                          role="img"
+                          style={Object {}}
+                          viewBox="0 0 448 512"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
+                            fill="currentColor"
+                            style={Object {}}
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                  </div>
+                </span>
+              </div>
+              <div
+                className="ant-comment-content-detail"
+              >
+                <span
+                  className="sc-Axmtr kfCvpG"
+                >
+                  97% Disagree it's the most unpopular opinion I've seen here after that guy who wanted to be pregnant
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            className="ant-comment-nested"
+          >
+            <div
+              className="ant-comment"
+              style={
+                Object {
+                  "borderLeft": "2px solid rgb(239, 239, 239)",
+                  "listStyleType": "none",
+                  "padding": "1em",
+                  "paddingLeft": "4em",
+                }
+              }
+            >
+              <div
+                className="ant-comment-inner"
+              >
+                <div
+                  className="ant-comment-avatar"
+                />
+                <div
+                  className="ant-comment-content"
+                >
+                  <div
+                    className="ant-comment-content-author"
+                  >
+                    <span
+                      className="ant-comment-content-author-name"
+                    >
+                      <a
+                        href="ShitOnMyArsehole"
+                        style={
+                          Object {
+                            "textDecoration": "none",
+                          }
+                        }
+                      >
+                        ShitOnMyArsehole
+                      </a>
+                    </span>
+                    <span
+                      className="ant-comment-content-author-time"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "color": "rgb(36, 36, 36)",
+                            "display": "inline-block",
+                            "paddingLeft": "1em",
+                          }
+                        }
+                      >
+                        <span
+                          className="sc-AxiKw exhlKl"
+                        >
+                          638 points
+                        </span>
+                        <span
+                          style={
+                            Object {
+                              "padding": "0 .5em",
+                            }
+                          }
+                        >
+                          -
+                        </span>
+                        <span
+                          className="sc-AxhCb cxVvJR"
+                        >
+                          180 days and 15 hours ago
+                        </span>
+                        <span
+                          className="sc-AxjAm TWnUa"
+                          onClick={[Function]}
+                        >
+                          <span>
+                            <svg
+                              aria-hidden="true"
+                              className="svg-inline--fa fa-trash-alt fa-w-14 "
+                              data-icon="trash-alt"
+                              data-prefix="fas"
+                              focusable="false"
+                              role="img"
+                              style={Object {}}
+                              viewBox="0 0 448 512"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
+                                fill="currentColor"
+                                style={Object {}}
+                              />
+                            </svg>
+                          </span>
+                        </span>
+                      </div>
+                    </span>
+                  </div>
+                  <div
+                    className="ant-comment-content-detail"
+                  >
+                    <span
+                      className="sc-Axmtr kfCvpG"
+                    >
+                      Or the guy who likes sleeping in jeans
+
+Edit: to everyone commenting, I meant the dude liked to get into bed at night with the duvet on with jeans, not just taking a nap
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="ant-comment-nested"
+              >
+                <div
+                  className="ant-comment"
+                  style={
+                    Object {
+                      "borderLeft": "2px solid rgb(239, 239, 239)",
+                      "listStyleType": "none",
+                      "padding": "1em",
+                      "paddingLeft": "4em",
+                    }
+                  }
+                >
+                  <div
+                    className="ant-comment-inner"
+                  >
+                    <div
+                      className="ant-comment-avatar"
+                    />
+                    <div
+                      className="ant-comment-content"
+                    >
+                      <div
+                        className="ant-comment-content-author"
+                      >
+                        <span
+                          className="ant-comment-content-author-name"
+                        >
+                          <a
+                            href="nikithb"
+                            style={
+                              Object {
+                                "textDecoration": "none",
+                              }
+                            }
+                          >
+                            nikithb
+                          </a>
+                        </span>
+                        <span
+                          className="ant-comment-content-author-time"
+                        >
+                          <div
+                            style={
+                              Object {
+                                "color": "rgb(36, 36, 36)",
+                                "display": "inline-block",
+                                "paddingLeft": "1em",
+                              }
+                            }
+                          >
+                            <span
+                              className="sc-AxiKw exhlKl"
+                            >
+                              551 points
+                            </span>
+                            <span
+                              style={
+                                Object {
+                                  "padding": "0 .5em",
+                                }
+                              }
+                            >
+                              -
+                            </span>
+                            <span
+                              className="sc-AxhCb cxVvJR"
+                            >
+                              180 days and 12 hours ago
+                            </span>
+                            <span
+                              className="sc-AxjAm TWnUa"
+                              onClick={[Function]}
+                            >
+                              <span>
+                                <svg
+                                  aria-hidden="true"
+                                  className="svg-inline--fa fa-trash-alt fa-w-14 "
+                                  data-icon="trash-alt"
+                                  data-prefix="fas"
+                                  focusable="false"
+                                  role="img"
+                                  style={Object {}}
+                                  viewBox="0 0 448 512"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
+                                    fill="currentColor"
+                                    style={Object {}}
+                                  />
+                                </svg>
+                              </span>
+                            </span>
+                          </div>
+                        </span>
+                      </div>
+                      <div
+                        className="ant-comment-content-detail"
+                      >
+                        <span
+                          className="sc-Axmtr kfCvpG"
+                        >
+                          Or the guy who eats his cereal with water
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="ant-comment-nested"
+                  >
+                    <div
+                      className="ant-comment"
+                      style={
+                        Object {
+                          "borderLeft": "2px solid rgb(239, 239, 239)",
+                          "listStyleType": "none",
+                          "padding": "1em",
+                          "paddingLeft": "4em",
+                        }
+                      }
+                    >
+                      <div
+                        className="ant-comment-inner"
+                      >
+                        <div
+                          className="ant-comment-avatar"
+                        />
+                        <div
+                          className="ant-comment-content"
+                        >
+                          <div
+                            className="ant-comment-content-author"
+                          >
+                            <span
+                              className="ant-comment-content-author-name"
+                            >
+                              <a
+                                href="Sazzybee"
+                                style={
+                                  Object {
+                                    "textDecoration": "none",
+                                  }
+                                }
+                              >
+                                Sazzybee
+                              </a>
+                            </span>
+                            <span
+                              className="ant-comment-content-author-time"
+                            >
+                              <div
+                                style={
+                                  Object {
+                                    "color": "rgb(36, 36, 36)",
+                                    "display": "inline-block",
+                                    "paddingLeft": "1em",
+                                  }
+                                }
+                              >
+                                <span
+                                  className="sc-AxiKw exhlKl"
+                                >
+                                  286 points
+                                </span>
+                                <span
+                                  style={
+                                    Object {
+                                      "padding": "0 .5em",
+                                    }
+                                  }
+                                >
+                                  -
+                                </span>
+                                <span
+                                  className="sc-AxhCb cxVvJR"
+                                >
+                                  180 days and 11 hours ago
+                                </span>
+                                <span
+                                  className="sc-AxjAm TWnUa"
+                                  onClick={[Function]}
+                                >
+                                  <span>
+                                    <svg
+                                      aria-hidden="true"
+                                      className="svg-inline--fa fa-trash-alt fa-w-14 "
+                                      data-icon="trash-alt"
+                                      data-prefix="fas"
+                                      focusable="false"
+                                      role="img"
+                                      style={Object {}}
+                                      viewBox="0 0 448 512"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
+                                        fill="currentColor"
+                                        style={Object {}}
+                                      />
+                                    </svg>
+                                  </span>
+                                </span>
+                              </div>
+                            </span>
+                          </div>
+                          <div
+                            className="ant-comment-content-detail"
+                          >
+                            <span
+                              className="sc-Axmtr kfCvpG"
+                            >
+                              Good lord, I wanted to down vote this but realised you're the messenger, we don't shoot the messenger
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="ant-comment"
+                  style={
+                    Object {
+                      "borderLeft": "2px solid rgb(239, 239, 239)",
+                      "listStyleType": "none",
+                      "padding": "1em",
+                      "paddingLeft": "4em",
+                    }
+                  }
+                >
+                  <div
+                    className="ant-comment-inner"
+                  >
+                    <div
+                      className="ant-comment-avatar"
+                    />
+                    <div
+                      className="ant-comment-content"
+                    >
+                      <div
+                        className="ant-comment-content-author"
+                      >
+                        <span
+                          className="ant-comment-content-author-name"
+                        >
+                          <a
+                            href="bellowingbullfinches"
+                            style={
+                              Object {
+                                "textDecoration": "none",
+                              }
+                            }
+                          >
+                            bellowingbullfinches
+                          </a>
+                        </span>
+                        <span
+                          className="ant-comment-content-author-time"
+                        >
+                          <div
+                            style={
+                              Object {
+                                "color": "rgb(36, 36, 36)",
+                                "display": "inline-block",
+                                "paddingLeft": "1em",
+                              }
+                            }
+                          >
+                            <span
+                              className="sc-AxiKw exhlKl"
+                            >
+                              32 points
+                            </span>
+                            <span
+                              style={
+                                Object {
+                                  "padding": "0 .5em",
+                                }
+                              }
+                            >
+                              -
+                            </span>
+                            <span
+                              className="sc-AxhCb cxVvJR"
+                            >
+                              180 days and 11 hours ago
+                            </span>
+                            <span
+                              className="sc-AxjAm TWnUa"
+                              onClick={[Function]}
+                            >
+                              <span>
+                                <svg
+                                  aria-hidden="true"
+                                  className="svg-inline--fa fa-trash-alt fa-w-14 "
+                                  data-icon="trash-alt"
+                                  data-prefix="fas"
+                                  focusable="false"
+                                  role="img"
+                                  style={Object {}}
+                                  viewBox="0 0 448 512"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
+                                    fill="currentColor"
+                                    style={Object {}}
+                                  />
+                                </svg>
+                              </span>
+                            </span>
+                          </div>
+                        </span>
+                      </div>
+                      <div
+                        className="ant-comment-content-detail"
+                      >
+                        <span
+                          className="sc-Axmtr kfCvpG"
+                        >
+                          Sleeping in jeans is fine on a couch or something, but not good in a bed under sheets.
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="ant-comment-nested"
+                  >
+                    <div
+                      className="ant-comment"
+                      style={
+                        Object {
+                          "borderLeft": "2px solid rgb(239, 239, 239)",
+                          "listStyleType": "none",
+                          "padding": "1em",
+                          "paddingLeft": "4em",
+                        }
+                      }
+                    >
+                      <div
+                        className="ant-comment-inner"
+                      >
+                        <div
+                          className="ant-comment-avatar"
+                        />
+                        <div
+                          className="ant-comment-content"
+                        >
+                          <div
+                            className="ant-comment-content-author"
+                          >
+                            <span
+                              className="ant-comment-content-author-name"
+                            >
+                              <a
+                                href="ShitOnMyArsehole"
+                                style={
+                                  Object {
+                                    "textDecoration": "none",
+                                  }
+                                }
+                              >
+                                ShitOnMyArsehole
+                              </a>
+                            </span>
+                            <span
+                              className="ant-comment-content-author-time"
+                            >
+                              <div
+                                style={
+                                  Object {
+                                    "color": "rgb(36, 36, 36)",
+                                    "display": "inline-block",
+                                    "paddingLeft": "1em",
+                                  }
+                                }
+                              >
+                                <span
+                                  className="sc-AxiKw exhlKl"
+                                >
+                                  16 points
+                                </span>
+                                <span
+                                  style={
+                                    Object {
+                                      "padding": "0 .5em",
+                                    }
+                                  }
+                                >
+                                  -
+                                </span>
+                                <span
+                                  className="sc-AxhCb cxVvJR"
+                                >
+                                  180 days and 11 hours ago
+                                </span>
+                                <span
+                                  className="sc-AxjAm TWnUa"
+                                  onClick={[Function]}
+                                >
+                                  <span>
+                                    <svg
+                                      aria-hidden="true"
+                                      className="svg-inline--fa fa-trash-alt fa-w-14 "
+                                      data-icon="trash-alt"
+                                      data-prefix="fas"
+                                      focusable="false"
+                                      role="img"
+                                      style={Object {}}
+                                      viewBox="0 0 448 512"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
+                                        fill="currentColor"
+                                        style={Object {}}
+                                      />
+                                    </svg>
+                                  </span>
+                                </span>
+                              </div>
+                            </span>
+                          </div>
+                          <div
+                            className="ant-comment-content-detail"
+                          >
+                            <span
+                              className="sc-Axmtr kfCvpG"
+                            >
+                              Yeah but you don't purposely go to bed in jeans like the poster did
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="ant-comment"
+              style={
+                Object {
+                  "borderLeft": "2px solid rgb(239, 239, 239)",
+                  "listStyleType": "none",
+                  "padding": "1em",
+                  "paddingLeft": "4em",
+                }
+              }
+            >
+              <div
+                className="ant-comment-inner"
+              >
+                <div
+                  className="ant-comment-avatar"
+                />
+                <div
+                  className="ant-comment-content"
+                >
+                  <div
+                    className="ant-comment-content-author"
+                  >
+                    <span
+                      className="ant-comment-content-author-name"
+                    >
+                      <a
+                        href="HansenTakeASeat"
+                        style={
+                          Object {
+                            "textDecoration": "none",
+                          }
+                        }
+                      >
+                        HansenTakeASeat
+                      </a>
+                    </span>
+                    <span
+                      className="ant-comment-content-author-time"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "color": "rgb(36, 36, 36)",
+                            "display": "inline-block",
+                            "paddingLeft": "1em",
+                          }
+                        }
+                      >
+                        <span
+                          className="sc-AxiKw exhlKl"
+                        >
+                          56 points
+                        </span>
+                        <span
+                          style={
+                            Object {
+                              "padding": "0 .5em",
+                            }
+                          }
+                        >
+                          -
+                        </span>
+                        <span
+                          className="sc-AxhCb cxVvJR"
+                        >
+                          180 days and 13 hours ago
+                        </span>
+                        <span
+                          className="sc-AxjAm TWnUa"
+                          onClick={[Function]}
+                        >
+                          <span>
+                            <svg
+                              aria-hidden="true"
+                              className="svg-inline--fa fa-trash-alt fa-w-14 "
+                              data-icon="trash-alt"
+                              data-prefix="fas"
+                              focusable="false"
+                              role="img"
+                              style={Object {}}
+                              viewBox="0 0 448 512"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
+                                fill="currentColor"
+                                style={Object {}}
+                              />
+                            </svg>
+                          </span>
+                        </span>
+                      </div>
+                    </span>
+                  </div>
+                  <div
+                    className="ant-comment-content-detail"
+                  >
+                    <span
+                      className="sc-Axmtr kfCvpG"
+                    >
+                      Am I pregegnant or am I ok?
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="ant-comment-nested"
+              >
+                <div
+                  className="ant-comment"
+                  style={
+                    Object {
+                      "borderLeft": "2px solid rgb(239, 239, 239)",
+                      "listStyleType": "none",
+                      "padding": "1em",
+                      "paddingLeft": "4em",
+                    }
+                  }
+                >
+                  <div
+                    className="ant-comment-inner"
+                  >
+                    <div
+                      className="ant-comment-avatar"
+                    />
+                    <div
+                      className="ant-comment-content"
+                    >
+                      <div
+                        className="ant-comment-content-author"
+                      >
+                        <span
+                          className="ant-comment-content-author-name"
+                        >
+                          <a
+                            href="_Noot_Noot"
+                            style={
+                              Object {
+                                "textDecoration": "none",
+                              }
+                            }
+                          >
+                            _Noot_Noot
+                          </a>
+                        </span>
+                        <span
+                          className="ant-comment-content-author-time"
+                        >
+                          <div
+                            style={
+                              Object {
+                                "color": "rgb(36, 36, 36)",
+                                "display": "inline-block",
+                                "paddingLeft": "1em",
+                              }
+                            }
+                          >
+                            <span
+                              className="sc-AxiKw exhlKl"
+                            >
+                              32 points
+                            </span>
+                            <span
+                              style={
+                                Object {
+                                  "padding": "0 .5em",
+                                }
+                              }
+                            >
+                              -
+                            </span>
+                            <span
+                              className="sc-AxhCb cxVvJR"
+                            >
+                              180 days and 11 hours ago
+                            </span>
+                            <span
+                              className="sc-AxjAm TWnUa"
+                              onClick={[Function]}
+                            >
+                              <span>
+                                <svg
+                                  aria-hidden="true"
+                                  className="svg-inline--fa fa-trash-alt fa-w-14 "
+                                  data-icon="trash-alt"
+                                  data-prefix="fas"
+                                  focusable="false"
+                                  role="img"
+                                  style={Object {}}
+                                  viewBox="0 0 448 512"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
+                                    fill="currentColor"
+                                    style={Object {}}
+                                  />
+                                </svg>
+                              </span>
+                            </span>
+                          </div>
+                        </span>
+                      </div>
+                      <div
+                        className="ant-comment-content-detail"
+                      >
+                        <span
+                          className="sc-Axmtr kfCvpG"
+                        >
+                          Can you get.....PREGANTE
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="ant-comment-nested"
+                  >
+                    <div
+                      className="ant-comment"
+                      style={
+                        Object {
+                          "borderLeft": "2px solid rgb(239, 239, 239)",
+                          "listStyleType": "none",
+                          "padding": "1em",
+                          "paddingLeft": "4em",
+                        }
+                      }
+                    >
+                      <div
+                        className="ant-comment-inner"
+                      >
+                        <div
+                          className="ant-comment-avatar"
+                        />
+                        <div
+                          className="ant-comment-content"
+                        >
+                          <div
+                            className="ant-comment-content-author"
+                          >
+                            <span
+                              className="ant-comment-content-author-name"
+                            >
+                              <a
+                                href="Macho_Mans_Ghost"
+                                style={
+                                  Object {
+                                    "textDecoration": "none",
+                                  }
+                                }
+                              >
+                                Macho_Mans_Ghost
+                              </a>
+                            </span>
+                            <span
+                              className="ant-comment-content-author-time"
+                            >
+                              <div
+                                style={
+                                  Object {
+                                    "color": "rgb(36, 36, 36)",
+                                    "display": "inline-block",
+                                    "paddingLeft": "1em",
+                                  }
+                                }
+                              >
+                                <span
+                                  className="sc-AxiKw exhlKl"
+                                >
+                                  29 points
+                                </span>
+                                <span
+                                  style={
+                                    Object {
+                                      "padding": "0 .5em",
+                                    }
+                                  }
+                                >
+                                  -
+                                </span>
+                                <span
+                                  className="sc-AxhCb cxVvJR"
+                                >
+                                  180 days and 11 hours ago
+                                </span>
+                                <span
+                                  className="sc-AxjAm TWnUa"
+                                  onClick={[Function]}
+                                >
+                                  <span>
+                                    <svg
+                                      aria-hidden="true"
+                                      className="svg-inline--fa fa-trash-alt fa-w-14 "
+                                      data-icon="trash-alt"
+                                      data-prefix="fas"
+                                      focusable="false"
+                                      role="img"
+                                      style={Object {}}
+                                      viewBox="0 0 448 512"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
+                                        fill="currentColor"
+                                        style={Object {}}
+                                      />
+                                    </svg>
+                                  </span>
+                                </span>
+                              </div>
+                            </span>
+                          </div>
+                          <div
+                            className="ant-comment-content-detail"
+                          >
+                            <span
+                              className="sc-Axmtr kfCvpG"
+                            >
+                              #AM I GREGNANT?!
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="ant-comment"
+          style={
+            Object {
+              "listStyleType": "none",
+              "padding": "1em",
+            }
+          }
+        >
+          <div
+            className="ant-comment-inner"
+          >
+            <div
+              className="ant-comment-avatar"
+            />
+            <div
+              className="ant-comment-content"
+            >
+              <div
+                className="ant-comment-content-author"
+              >
+                <span
+                  className="ant-comment-content-author-name"
+                >
+                  <a
+                    href="OceLawless"
+                    style={
+                      Object {
+                        "textDecoration": "none",
+                      }
+                    }
+                  >
+                    OceLawless
+                  </a>
+                </span>
+                <span
+                  className="ant-comment-content-author-time"
+                >
+                  <div
+                    style={
+                      Object {
+                        "color": "rgb(36, 36, 36)",
+                        "display": "inline-block",
+                        "paddingLeft": "1em",
+                      }
+                    }
+                  >
+                    <span
+                      className="sc-AxiKw exhlKl"
+                    >
+                      263 points
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "padding": "0 .5em",
+                        }
+                      }
+                    >
+                      -
+                    </span>
+                    <span
+                      className="sc-AxhCb cxVvJR"
+                    >
+                      180 days and 19 hours ago
+                    </span>
+                    <span
+                      className="sc-AxjAm TWnUa"
+                      onClick={[Function]}
+                    >
+                      <span>
+                        <svg
+                          aria-hidden="true"
+                          className="svg-inline--fa fa-trash-alt fa-w-14 "
+                          data-icon="trash-alt"
+                          data-prefix="fas"
+                          focusable="false"
+                          role="img"
+                          style={Object {}}
+                          viewBox="0 0 448 512"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
+                            fill="currentColor"
+                            style={Object {}}
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                  </div>
+                </span>
+              </div>
+              <div
+                className="ant-comment-content-detail"
+              >
+                <span
+                  className="sc-Axmtr kfCvpG"
+                >
+                  I'm gonna try this tonight op, and if it's shit I will come for you.
+
+Edit: just got home. Getting in shower now.
+
+Edit 2 electric boogaloo: risky click of the day. 
+[No bamboozle](https://imgur.com/a/u1C215L)
+
+Edit 3: you!!!  I declare shenanigans.
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            className="ant-comment-nested"
+          >
+            <div
+              className="ant-comment"
+              style={
+                Object {
+                  "borderLeft": "2px solid rgb(239, 239, 239)",
+                  "listStyleType": "none",
+                  "padding": "1em",
+                  "paddingLeft": "4em",
+                }
+              }
+            >
+              <div
+                className="ant-comment-inner"
+              >
+                <div
+                  className="ant-comment-avatar"
+                />
+                <div
+                  className="ant-comment-content"
+                >
+                  <div
+                    className="ant-comment-content-author"
+                  >
+                    <span
+                      className="ant-comment-content-author-name"
+                    >
+                      <a
+                        href="[deleted]"
+                        style={
+                          Object {
+                            "textDecoration": "none",
+                          }
+                        }
+                      >
+                        [deleted]
+                      </a>
+                    </span>
+                    <span
+                      className="ant-comment-content-author-time"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "color": "rgb(36, 36, 36)",
+                            "display": "inline-block",
+                            "paddingLeft": "1em",
+                          }
+                        }
+                      >
+                        <span
+                          className="sc-AxiKw exhlKl"
+                        >
+                          136 points
+                        </span>
+                        <span
+                          style={
+                            Object {
+                              "padding": "0 .5em",
+                            }
+                          }
+                        >
+                          -
+                        </span>
+                        <span
+                          className="sc-AxhCb cxVvJR"
+                        >
+                          180 days and 19 hours ago
+                        </span>
+                        <span
+                          className="sc-AxjAm TWnUa"
+                          onClick={[Function]}
+                        >
+                          <span>
+                            <svg
+                              aria-hidden="true"
+                              className="svg-inline--fa fa-trash-alt fa-w-14 "
+                              data-icon="trash-alt"
+                              data-prefix="fas"
+                              focusable="false"
+                              role="img"
+                              style={Object {}}
+                              viewBox="0 0 448 512"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
+                                fill="currentColor"
+                                style={Object {}}
+                              />
+                            </svg>
+                          </span>
+                        </span>
+                      </div>
+                    </span>
+                  </div>
+                  <div
+                    className="ant-comment-content-detail"
+                  >
+                    <span
+                      className="sc-Axmtr kfCvpG"
+                    >
+                      This comment has been deleted.
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="ant-comment-nested"
+              >
+                <div
+                  className="ant-comment"
+                  style={
+                    Object {
+                      "borderLeft": "2px solid rgb(239, 239, 239)",
+                      "listStyleType": "none",
+                      "padding": "1em",
+                      "paddingLeft": "4em",
+                    }
+                  }
+                >
+                  <div
+                    className="ant-comment-inner"
+                  >
+                    <div
+                      className="ant-comment-avatar"
+                    />
+                    <div
+                      className="ant-comment-content"
+                    >
+                      <div
+                        className="ant-comment-content-author"
+                      >
+                        <span
+                          className="ant-comment-content-author-name"
+                        >
+                          <a
+                            href="OceLawless"
+                            style={
+                              Object {
+                                "textDecoration": "none",
+                              }
+                            }
+                          >
+                            OceLawless
+                          </a>
+                        </span>
+                        <span
+                          className="ant-comment-content-author-time"
+                        >
+                          <div
+                            style={
+                              Object {
+                                "color": "rgb(36, 36, 36)",
+                                "display": "inline-block",
+                                "paddingLeft": "1em",
+                              }
+                            }
+                          >
+                            <span
+                              className="sc-AxiKw exhlKl"
+                            >
+                              10 points
+                            </span>
+                            <span
+                              style={
+                                Object {
+                                  "padding": "0 .5em",
+                                }
+                              }
+                            >
+                              -
+                            </span>
+                            <span
+                              className="sc-AxhCb cxVvJR"
+                            >
+                              180 days and 7 hours ago
+                            </span>
+                            <span
+                              className="sc-AxjAm TWnUa"
+                              onClick={[Function]}
+                            >
+                              <span>
+                                <svg
+                                  aria-hidden="true"
+                                  className="svg-inline--fa fa-trash-alt fa-w-14 "
+                                  data-icon="trash-alt"
+                                  data-prefix="fas"
+                                  focusable="false"
+                                  role="img"
+                                  style={Object {}}
+                                  viewBox="0 0 448 512"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
+                                    fill="currentColor"
+                                    style={Object {}}
+                                  />
+                                </svg>
+                              </span>
+                            </span>
+                          </div>
+                        </span>
+                      </div>
+                      <div
+                        className="ant-comment-content-detail"
+                      >
+                        <span
+                          className="sc-Axmtr kfCvpG"
+                        >
+                          You, sonofabitch.
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="ant-comment-nested"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              className="ant-comment"
+              style={
+                Object {
+                  "borderLeft": "2px solid rgb(239, 239, 239)",
+                  "listStyleType": "none",
+                  "padding": "1em",
+                  "paddingLeft": "4em",
+                }
+              }
+            >
+              <div
+                className="ant-comment-inner"
+              >
+                <div
+                  className="ant-comment-avatar"
+                />
+                <div
+                  className="ant-comment-content"
+                >
+                  <div
+                    className="ant-comment-content-author"
+                  >
+                    <span
+                      className="ant-comment-content-author-name"
+                    >
+                      <a
+                        href="DaSwagCow"
+                        style={
+                          Object {
+                            "textDecoration": "none",
+                          }
+                        }
+                      >
+                        DaSwagCow
+                      </a>
+                    </span>
+                    <span
+                      className="ant-comment-content-author-time"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "color": "rgb(36, 36, 36)",
+                            "display": "inline-block",
+                            "paddingLeft": "1em",
+                          }
+                        }
+                      >
+                        <span
+                          className="sc-AxiKw exhlKl"
+                        >
+                          33 points
+                        </span>
+                        <span
+                          style={
+                            Object {
+                              "padding": "0 .5em",
+                            }
+                          }
+                        >
+                          -
+                        </span>
+                        <span
+                          className="sc-AxhCb cxVvJR"
+                        >
+                          180 days and 17 hours ago
+                        </span>
+                        <span
+                          className="sc-AxjAm TWnUa"
+                          onClick={[Function]}
+                        >
+                          <span>
+                            <svg
+                              aria-hidden="true"
+                              className="svg-inline--fa fa-trash-alt fa-w-14 "
+                              data-icon="trash-alt"
+                              data-prefix="fas"
+                              focusable="false"
+                              role="img"
+                              style={Object {}}
+                              viewBox="0 0 448 512"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
+                                fill="currentColor"
+                                style={Object {}}
+                              />
+                            </svg>
+                          </span>
+                        </span>
+                      </div>
+                    </span>
+                  </div>
+                  <div
+                    className="ant-comment-content-detail"
+                  >
+                    <span
+                      className="sc-Axmtr kfCvpG"
+                    >
+                      So?
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="ant-comment-nested"
+              >
+                <div
+                  className="ant-comment"
+                  style={
+                    Object {
+                      "borderLeft": "2px solid rgb(239, 239, 239)",
+                      "listStyleType": "none",
+                      "padding": "1em",
+                      "paddingLeft": "4em",
+                    }
+                  }
+                >
+                  <div
+                    className="ant-comment-inner"
+                  >
+                    <div
+                      className="ant-comment-avatar"
+                    />
+                    <div
+                      className="ant-comment-content"
+                    >
+                      <div
+                        className="ant-comment-content-author"
+                      >
+                        <span
+                          className="ant-comment-content-author-name"
+                        >
+                          <a
+                            href="Killahcamcam"
+                            style={
+                              Object {
+                                "textDecoration": "none",
+                              }
+                            }
+                          >
+                            Killahcamcam
+                          </a>
+                        </span>
+                        <span
+                          className="ant-comment-content-author-time"
+                        >
+                          <div
+                            style={
+                              Object {
+                                "color": "rgb(36, 36, 36)",
+                                "display": "inline-block",
+                                "paddingLeft": "1em",
+                              }
+                            }
+                          >
+                            <span
+                              className="sc-AxiKw exhlKl"
+                            >
+                              75 points
+                            </span>
+                            <span
+                              style={
+                                Object {
+                                  "padding": "0 .5em",
+                                }
+                              }
+                            >
+                              -
+                            </span>
+                            <span
+                              className="sc-AxhCb cxVvJR"
+                            >
+                              180 days and 16 hours ago
+                            </span>
+                            <span
+                              className="sc-AxjAm TWnUa"
+                              onClick={[Function]}
+                            >
+                              <span>
+                                <svg
+                                  aria-hidden="true"
+                                  className="svg-inline--fa fa-trash-alt fa-w-14 "
+                                  data-icon="trash-alt"
+                                  data-prefix="fas"
+                                  focusable="false"
+                                  role="img"
+                                  style={Object {}}
+                                  viewBox="0 0 448 512"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
+                                    fill="currentColor"
+                                    style={Object {}}
+                                  />
+                                </svg>
+                              </span>
+                            </span>
+                          </div>
+                        </span>
+                      </div>
+                      <div
+                        className="ant-comment-content-detail"
+                      >
+                        <span
+                          className="sc-Axmtr kfCvpG"
+                        >
+                          It's shit.
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="ant-comment-nested"
+                  />
+                </div>
+                <div
+                  className="ant-comment"
+                  style={
+                    Object {
+                      "borderLeft": "2px solid rgb(239, 239, 239)",
+                      "listStyleType": "none",
+                      "padding": "1em",
+                      "paddingLeft": "4em",
+                    }
+                  }
+                >
+                  <div
+                    className="ant-comment-inner"
+                  >
+                    <div
+                      className="ant-comment-avatar"
+                    />
+                    <div
+                      className="ant-comment-content"
+                    >
+                      <div
+                        className="ant-comment-content-author"
+                      >
+                        <span
+                          className="ant-comment-content-author-name"
+                        >
+                          <a
+                            href="OceLawless"
+                            style={
+                              Object {
+                                "textDecoration": "none",
+                              }
+                            }
+                          >
+                            OceLawless
+                          </a>
+                        </span>
+                        <span
+                          className="ant-comment-content-author-time"
+                        >
+                          <div
+                            style={
+                              Object {
+                                "color": "rgb(36, 36, 36)",
+                                "display": "inline-block",
+                                "paddingLeft": "1em",
+                              }
+                            }
+                          >
+                            <span
+                              className="sc-AxiKw exhlKl"
+                            >
+                              23 points
+                            </span>
+                            <span
+                              style={
+                                Object {
+                                  "padding": "0 .5em",
+                                }
+                              }
+                            >
+                              -
+                            </span>
+                            <span
+                              className="sc-AxhCb cxVvJR"
+                            >
+                              180 days and 16 hours ago
+                            </span>
+                            <span
+                              className="sc-AxjAm TWnUa"
+                              onClick={[Function]}
+                            >
+                              <span>
+                                <svg
+                                  aria-hidden="true"
+                                  className="svg-inline--fa fa-trash-alt fa-w-14 "
+                                  data-icon="trash-alt"
+                                  data-prefix="fas"
+                                  focusable="false"
+                                  role="img"
+                                  style={Object {}}
+                                  viewBox="0 0 448 512"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
+                                    fill="currentColor"
+                                    style={Object {}}
+                                  />
+                                </svg>
+                              </span>
+                            </span>
+                          </div>
+                        </span>
+                      </div>
+                      <div
+                        className="ant-comment-content-detail"
+                      >
+                        <span
+                          className="sc-Axmtr kfCvpG"
+                        >
+                          It's 3pm where I am. So still at work
+
+
+Edit:sorry lads I'm still at a bar. I will update ASAP no bamboozle.
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="ant-comment-nested"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </section>
+  </main>
+</section>
+`;

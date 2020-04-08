@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The App component  renders correctly. 1`] = `
+<section
+  className="ant-layout"
+  style={
+    Object {
+      "backgroundColor": "rgb(222, 228, 234)",
+      "minHeight": "100vh",
+      "padding": "7em 10em",
+    }
+  }
+>
+  <section
+    className="ant-layout"
+    style={
+      Object {
+        "backgroundColor": "rgb(249, 249, 249)",
+        "borderRadius": "15px",
+        "boxShadow": "0 0 10px gray",
+        "fontFamily": "verdana",
+        "padding": "3em 6em",
+      }
+    }
+  >
+    <div
+      className="ant-skeleton ant-skeleton-active"
+    >
+      <div
+        className="ant-skeleton-content"
+      >
+        <h3
+          className="ant-skeleton-title"
+          style={
+            Object {
+              "width": "38%",
+            }
+          }
+        />
+        <ul
+          className="ant-skeleton-paragraph"
+        >
+          <li
+            style={
+              Object {
+                "width": undefined,
+              }
+            }
+          />
+          <li
+            style={
+              Object {
+                "width": undefined,
+              }
+            }
+          />
+          <li
+            style={
+              Object {
+                "width": "61%",
+              }
+            }
+          />
+        </ul>
+      </div>
+    </div>
+  </section>
+</section>
+`;
