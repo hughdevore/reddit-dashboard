@@ -11,7 +11,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "antd": "^4.1.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "object-delete-key": "^1.9.20",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
